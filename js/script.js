@@ -12,19 +12,20 @@ quoteForm.addEventListener("submit", (e) => {
   const sDiscount = 0.20;
   const bDiscount= 0.40;
   let Discount = "";
+  let TotDiscount = TotPrice * Discount;
 
-  if (UserAge < 18 ) {
+  if (UserAge.value < 18 ) {
       console.log ("Minorenne, sconto del 20%");
       console.log (TotPrice);
       let Discount = 0.20;
-      let NetPrice = (TotPrice -  Discount);
+      let NetPrice = (TotPrice -  TotDiscount);
 
       document.getElementById("PriceQuote").value = NetPrice;
 
-  } else if (UserAge > 65 ){
+  } else if (UserAge.value > 65 ){
       console.log ("Pensionato");
       const Discount = 0.40;
-      let NetPrice = (TotPrice -  Discount);
+      let NetPrice = (TotPrice -  TotDiscount);
       document.getElementById("PriceQuote").value = NetPrice;
   }else {
       console.log ("Nessuno sconto applicato");
@@ -35,9 +36,9 @@ quoteForm.addEventListener("submit", (e) => {
   }
 
   if (travelDistance.value == "" || UserAge.value == "") {
-    alert("Ensure you input a value in both fields!");
+    alert("I campi sono obbligatori!");
   } else {
-    alert("This form has been successfully submitted!");
+    alert("Inviato correttamente");
     console.log(
       `il passeggero percorre una distanza di ${travelDistance.value} Km and ha un età pari a ${UserAge.value} anni`
     );
