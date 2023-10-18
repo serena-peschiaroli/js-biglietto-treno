@@ -17,20 +17,22 @@ quoteForm.addEventListener("submit", (e) => {
   if (UserAge.value < 18 ) {
       console.log ("Minorenne, sconto del 20%");
       let Discount = 0.20;
-      console.log (TotPrice * Discount);
+      console.log (`€ ${TotPrice  * Discount}`);
       let TotDiscount = (TotPrice * Discount);
       let NetPrice = (Math.round(TotPrice -  TotDiscount));
 
       document.getElementById("PriceQuote").value =`il prezzo è di € ${NetPrice}`;
 
   } else if (UserAge.value > 65 ){
-      const Discount = 0.40;
       console.log ("Pensionato, sconto del 40%");
+      const Discount = 0.40;
+      console.log (`€ ${TotPrice  * Discount}`);
       let TotDiscount = (TotPrice * Discount);
       let NetPrice = (Math.round(TotPrice -  TotDiscount));
       document.getElementById("PriceQuote").value =`il prezzo è di € ${NetPrice}`;
   }else {
       console.log ("Nessuno sconto applicato");
+      console.log (`€ ${TotPrice}`);
       let NetPrice = (Math.round (TotPrice))
       document.getElementById("PriceQuote").value = `il prezzo è di € ${NetPrice}`;
 
@@ -43,7 +45,7 @@ quoteForm.addEventListener("submit", (e) => {
   } else {
     alert("Inviato correttamente");
     console.log(
-      `il passeggero percorre una distanza di ${travelDistance.value} Km and ha un età pari a ${UserAge.value} anni`
+      `il passeggero percorre una distanza di ${travelDistance.value} Km e ha un età pari a ${UserAge.value} anni`
     );
 
     travelDistance.value = "";
