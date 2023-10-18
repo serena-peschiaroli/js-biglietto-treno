@@ -22,7 +22,7 @@
 
     Preparo il messaggio del prezzo finale. 
 
-    2b. SE l'età dell'utente è >65: PrezzoBiglietto * 0.45 = scontoTotale2; poi, PrezzoBiglietto - ScontoTotale2 = Prezzo con sconto
+    2b. SE l'età dell'utente è >65: PrezzoBiglietto * 0.40 = scontoTotale2; poi, PrezzoBiglietto - ScontoTotale2 = Prezzo con sconto
 
     Preparo il messaggio con prezzo finale.
 

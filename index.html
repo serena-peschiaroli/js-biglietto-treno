@@ -5,8 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prezzo del biglietto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h2>Acquista il tuo biglietto</h2>
+                <div class="card">
+                    <div class="form-wrapper mb-3">
+                        <form id="quoteForm">
+
+                            <div class="form-group">
+                              <label for="TotalKm">Inserisci i kilometri</label>
+                              <input type="text" class="form-control" id="TotalKm" placeholder="Kilometri">
+                            </div>
+                            <div class="form-group">
+                              <label for="age">Inserisci la tua età</label>
+                              <input type="text" class="form-control" id="age" placeholder="Età anagrafica">
+                            </div>
+                            <div class="form-group">
+                                <label for="PriceQuote">Prezzo totale...</label>
+                                <textarea class="form-control" id="PriceQuote" rows="1"></textarea>
+                            </div>
+                            <button type="submit" id="submitInfo" class="btn btn-primary">Submit</button>
+
+                          </form>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
     
+    <script src="js/script.js"></script>
 </body>
 </html>
