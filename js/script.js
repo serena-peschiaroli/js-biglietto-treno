@@ -8,28 +8,31 @@ quoteForm.addEventListener("submit", (e) => {
   let UserAge = document.getElementById("age");
   const PriceKm = 0.21;
     
-  let TotPrice = (Math.round(travelDistance.value * PriceKm)) ;
+  let TotPrice = travelDistance.value * PriceKm ;
   const sDiscount = 0.20;
   const bDiscount= 0.40;
   let Discount = "";
-  let TotDiscount = TotPrice * Discount;
+  let TotDiscount = (TotPrice * Discount);
 
   if (UserAge.value < 18 ) {
       console.log ("Minorenne, sconto del 20%");
-      console.log (TotPrice);
       let Discount = 0.20;
-      let NetPrice = (TotPrice -  TotDiscount);
+      console.log (TotPrice * Discount);
+      let TotDiscount = (TotPrice * Discount);
+      let NetPrice = (Math.round(TotPrice -  TotDiscount));
 
-      document.getElementById("PriceQuote").value = NetPrice;
+      document.getElementById("PriceQuote").value =`il prezzo è di € ${NetPrice}`;
 
   } else if (UserAge.value > 65 ){
-      console.log ("Pensionato");
       const Discount = 0.40;
-      let NetPrice = (TotPrice -  TotDiscount);
-      document.getElementById("PriceQuote").value = NetPrice;
+      console.log ("Pensionato, sconto del 40%");
+      let TotDiscount = (TotPrice * Discount);
+      let NetPrice = (Math.round(TotPrice -  TotDiscount));
+      document.getElementById("PriceQuote").value =`il prezzo è di € ${NetPrice}`;
   }else {
       console.log ("Nessuno sconto applicato");
-      document.getElementById("PriceQuote").value = TotPrice;
+      let NetPrice = (Math.round (TotPrice))
+      document.getElementById("PriceQuote").value = `il prezzo è di € ${NetPrice}`;
 
       
 
